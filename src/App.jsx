@@ -1,13 +1,20 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import "@lottiefiles/lottie-player";
-import Home from "./components/Home";
+import { Home, Profile, Login, Register } from './pages';
+import { NavBar } from "./components";
 
 const App = () => {
   return (
     <>
-      <div>App</div>
-      <Home />
+      <Routes>
+        <Route path="/" element={<NavBar />}>
+        <Route index element={<Home />}/>
+          <Route path="profile" element={<Profile />}/>
+          <Route path="login" element={<Login />}/>
+          <Route path="register" element={<Register />}/>
+        </Route>
+      </Routes>
     </>
   );
 };
