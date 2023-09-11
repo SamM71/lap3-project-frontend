@@ -19,3 +19,7 @@ nav {
   align-items: center;
   list-style: none;
 }
+
+.timer-btns {
+  margin: 20px;
+}

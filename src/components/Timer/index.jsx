@@ -1,6 +1,7 @@
 import React from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { StartButton, PauseButton } from '../';
 
 const Timer = () => {
   return (
@@ -9,7 +10,11 @@ const Timer = () => {
         textColor: 'navy',
         pathColor: 'red',
         tailColor: 'grey'
-      })}/>;
+      })}/>
+      <div>
+        <StartButton />
+        <PauseButton />
+      </div>
     </>
   )
 }
