@@ -1,10 +1,11 @@
 import React from "react";
 import ProfileCard from "../../components/ProfileCard";
 import { DogCard, DogLevel } from "../../components";
+import pp from "../../assets/pp.jpeg";
 
 function Profile() {
   const user = {
-    profileImage: "https://via.placeholder.com/150",
+    profileImage: pp,
     firstName: "Tim",
     lastName: "Rowe",
     email: "tim.row@example.com",
