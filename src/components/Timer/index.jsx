@@ -65,10 +65,14 @@ const Timer = () => {
 
   return (
     <>
-      <CircularProgressbar value={percentage} text={minutes + ":" + seconds} styles={buildStyles({
-        textColor: 'navy',
-        pathColor: mode === 'work' ? 'red' : 'green',
-        tailColor: 'grey'
+      <CircularProgressbar
+        className='progress-bar'
+        value={percentage} 
+        text={minutes + ":" + seconds} 
+        styles={buildStyles({
+          textColor: 'navy',
+          pathColor: mode === 'work' ? 'red' : 'green',
+          tailColor: 'grey'
       })}/>
       <div>
         {
