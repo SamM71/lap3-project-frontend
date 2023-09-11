@@ -41,6 +41,7 @@
   color: #888;
 }
 
+
 .profile-container {
   display: flex;
   justify-content: space-between;
@@ -89,3 +90,24 @@
   font-weight: bold;
   color: black;
 }
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
