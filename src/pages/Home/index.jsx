@@ -32,7 +32,7 @@ const Home = () => {
         <SessionForm />
         <button
         onClick={closeModal}
-        >Don't Add Session</button>
+        >Dont Add Session</button>
       </Modal>
     </>
   )

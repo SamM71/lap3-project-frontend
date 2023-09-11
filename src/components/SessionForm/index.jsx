@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Modal from 'react-modal'
 
 const SessionForm = () => {
   const [title, setTitle] = useState('')
