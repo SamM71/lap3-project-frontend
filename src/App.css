@@ -22,4 +22,5 @@ nav {
 
 .timer-btns {
   margin: 20px;
+  cursor: pointer;
 }
