@@ -14,20 +14,18 @@ const Timer = () => {
   const isPausedRef = useRef(isPaused)
   const modeRef = useRef(mode)
 
+  let player = document.querySelector("lottie-player")
+
   function initTimer() {
     console.log("line 15", timerInfo.workMinutes)
     secondsLeftRef.current = timerInfo.workMinutes * 60
     setSecondsLeft(secondsLeftRef.current)
     console.log("line 17", secondsLeftRef.current)
   }
-
   
   function tick() {
     secondsLeftRef.current--
     setSecondsLeft(prev => prev -1) // line doesn't seem to do anything but the DOM won't update without it
-    console.log(secondsLeftRef.current)
-    console.log(secondsLeft)
-    // console.log(secondsLeft)
   }
   
   useEffect(() => {
@@ -39,8 +37,7 @@ const Timer = () => {
       setSecondsLeft(nextSeconds)
       secondsLeftRef.current = nextSeconds
     }
-    console.log("first")
-
+    
     initTimer()
     
     const interval = setInterval(() => {
@@ -48,6 +45,8 @@ const Timer = () => {
         return;
       }
       if (secondsLeftRef.current === 0) {
+        setIsPaused(true)
+        isPausedRef.current = true
         return switchMode()
       }
       tick()
@@ -86,13 +85,17 @@ const Timer = () => {
         <div>
           {
             isPaused ? 
-            <StartButton onClick={() => {
+              <StartButton onClick={() => {
               setIsPaused(false)
-              isPausedRef.current = false}}/> 
-              : 
+              isPausedRef.current = false
+              player = document.querySelector("lottie-player")
+              player.play()
+              }}/> 
+            : 
               <PauseButton onClick={() => {
                 setIsPaused(true)
-                isPausedRef.current = true}}/>
+                isPausedRef.current = true
+                player.pause()}}/>
               }
         </div>
       </div>
