@@ -70,7 +70,7 @@ const Timer = () => {
         value={percentage} 
         text={minutes + ":" + seconds} 
         styles={buildStyles({
-          textColor: 'navy',
+          textColor: 'white',
           pathColor: mode === 'work' ? 'red' : 'green',
           tailColor: 'grey'
       })}/>
