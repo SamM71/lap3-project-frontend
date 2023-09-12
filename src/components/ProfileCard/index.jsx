@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TaskPopUp from "../TaskPopUp";
+import { useState } from "react";
 
 function ProfileCard({ user }) {
+  const [buttonPopup, setButtonPopup] = useState(false);
   return (
     <div
       style={{
@@ -26,10 +29,14 @@ function ProfileCard({ user }) {
       <p>Email: {user.email}</p>
       <button
         style={{ marginTop: "auto" }}
-        onClick={() => alert("Displaying completed tasks")}
+        onClick={() => setButtonPopup(true)}
       >
-        See Tasks Completed
+        See Completed Tasks
       </button>
+      <TaskPopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
+        <h3>Popup content</h3>
+        <p> This is where the tasks will be</p>
+      </TaskPopUp>
     </div>
   );
 }
