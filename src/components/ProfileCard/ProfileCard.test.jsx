@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { screen, render, cleanup } from "@testing-library/react";
+import { screen, render, cleanup, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
 import matchers from "@testing-library/jest-dom/matchers";
@@ -34,8 +34,18 @@ describe("ProfileCard component", () => {
     const email = screen.getByText(/tim.row@example.com/i);
     expect(email).toBeInTheDocument();
 
-    const button = screen.getByRole("button", { name: /see tasks completed/i });
+    const button = screen.getByRole("button", { name: /see completed tasks/i });
     expect(button).toBeInTheDocument();
+  });
+
+  it("Opens the popup when 'See Completed Tasks' button is clicked", () => {
+    const button = screen.getByRole("button", { name: /see completed tasks/i });
+    fireEvent.click(button);
+
+    expect(screen.getByText(/popup content/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/this is where the tasks will be/i)
+    ).toBeInTheDocument();
   });
 
   afterEach(() => {
