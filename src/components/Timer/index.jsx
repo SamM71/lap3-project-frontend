@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useContext } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { StartButton, PauseButton } from '../';
+import { StartButton, PauseButton, WalkingAnimation, SleepingAnimation } from '../';
 import TimerContext from '../../contexts';
 
 const Timer = () => {
@@ -84,6 +84,11 @@ const Timer = () => {
             <PauseButton onClick={() => {
             setIsPaused(true)
             isPausedRef.current = true}}/>
+        }
+      </div>
+      <div>
+        {
+          mode === 'work' ? <WalkingAnimation /> : <SleepingAnimation />
         }
       </div>
     </>
