@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "../../../src/TaskGallery.css";
 
 function TaskGallery() {
   const [tasks, setTasks] = useState([]);
@@ -18,18 +19,20 @@ function TaskGallery() {
 
   return (
     <div>
-      <h3>Your Tasks</h3>
-      {tasks.length > 0 ? (
-        tasks.map((task) => (
-          <div key={task._id}>
-            <p>Task: {task.task}</p>
-            <p>Description: {task.description}</p>
-            <p>Completed at: {task.completed_at}</p>
-          </div>
-        ))
-      ) : (
-        <p>No tasks available</p>
-      )}
+      <div className="TaskGallery">
+        <h2>Your Tasks</h2>
+        {tasks.length > 0 ? (
+          tasks.map((task) => (
+            <div key={task._id} className="taskContainer">
+              <p>Task: {task.task}</p>
+              <p>Description: {task.description}</p>
+              <p>Completed at: {task.completed_at}</p>
+            </div>
+          ))
+        ) : (
+          <p className="noTasks">No tasks available</p>
+        )}
+      </div>
     </div>
   );
 }

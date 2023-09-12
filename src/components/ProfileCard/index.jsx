@@ -36,8 +36,6 @@ function ProfileCard({ user }) {
       </button>
       <TaskPopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
         <TaskGallery />
-        <h3>Your Tasks</h3>
-        <p>This is where the tasks will be</p>
       </TaskPopUp>
     </div>
   );
