@@ -21,7 +21,7 @@ describe("NavBar component", () => {
     const nav = screen.getByRole("navigation");
 
     expect(nav).toBeInTheDocument();
-    expect(nav.childNodes.length).toBe(4);
+    expect(nav.childNodes.length).toBe(5);
   });
 
   afterEach(() => {
