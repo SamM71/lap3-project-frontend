@@ -1,10 +1,27 @@
 import React, { useState } from 'react'
+import './index.css'
 
-const SessionForm = () => {
+const SessionForm = (closeModal) => {
   const [title, setTitle] = useState('')
   const [desc, setDesc] = useState('')
+  const [mood, setMood] = useState('')
   const [message, setMessage] = useState('')
-  const [timestamp, setTimestamp] = useState('')
+
+  function veryGoodMood() {
+    setMood("Very Good")
+  }
+
+  function goodMood() {
+    setMood("Good")
+  }
+
+  function badMood() {
+    setMood("Very Good")
+  }
+
+  function VeryBadMood() {
+    setMood("Very Bad")
+  }
 
   function handleTitle(e) {
     setTitle(e.target.value)
@@ -15,11 +32,10 @@ const SessionForm = () => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    setTimestamp(Date());
-    if (title.length > 0 && desc.length > 0) {
-      fetch('https://localhost:4000/tasks', {
+    if (title.length > 0 && desc.length > 0 && mood.length > 0) {
+      fetch('http://localhost:8080/tasks', {
         method: 'POST',
-        body: JSON.stringify({name: title, description: desc, completed_at: timestamp}),
+        body: JSON.stringify({name: title, description: desc, mood: mood, completed_at: Date()}),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
@@ -41,7 +57,6 @@ const SessionForm = () => {
       });
       setTitle('');
       setDesc('');
-      setTimestamp('');
     } else {
       setMessage('Please enter session details');
       setTimeout(() => {
@@ -50,11 +65,19 @@ const SessionForm = () => {
     }
   }
 
+  // function closeForm() {
+  //   if(message === 'Sessions added successfully.') {
+  //     return closeModal
+  //   } else {
+  //     return openModal
+  //   }
+  // }
+
   return (
     <form id='session-form'>
       <h1>Add to your Activity Log</h1>
-      <div>
-        <label htmlFor="title">Title of session:</label>
+      <div className="form-input">
+        <label htmlFor="title">Title of session: </label>
         <input
         name='title'
         type="text"
@@ -62,20 +85,45 @@ const SessionForm = () => {
         value={title}
         onChange={handleTitle} />
       </div>
-      <div>
-        <label htmlFor="desc">Describe your session:</label>
+      
+      <div className="form-input">
+      <label htmlFor="desc">Description:</label>
+      <br />
         <textarea 
         name="desc" 
         value={desc}
         id="desc" 
         cols="30" 
-        rows="10"
+        rows="6"
         onChange={handleDesc}></textarea>
+      </div>
+      <p>How do you feel that session went?</p>
+      <div className="mood-form">
+        <span
+        onClick={VeryBadMood}>
+          <p>&#128530;</p>
+        </span>
+        <span
+        onClick={badMood}>
+          <p>&#128533;</p>
+        </span>
+        <span
+        onClick={goodMood}>
+          <p>&#128522;</p>
+        </span>
+        <span
+        onClick={veryGoodMood}>
+          <p>&#128512;</p>
+        </span>
       </div>
       <button
       type='submit'
       onClick={handleSubmit}
+      
       >Add session</button>
+      <button
+        onClick={() => closeModal()}
+        >Cancel</button>
       <p>{message}</p>
     </form>
   )
