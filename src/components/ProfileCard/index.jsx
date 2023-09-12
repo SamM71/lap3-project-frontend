@@ -8,10 +8,11 @@ function ProfileCard({ user }) {
         display: "flex",
         flexDirection: "column",
         padding: "20px",
-        maxWidth: "300px",
+        maxWidth: "500px",
         margin: "0 auto",
         textAlign: "center",
         height: "100%",
+        boxSizing: "border-box",
       }}
     >
       <img
