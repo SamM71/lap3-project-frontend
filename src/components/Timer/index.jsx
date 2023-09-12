@@ -66,7 +66,7 @@ const Timer = () => {
   return (
     <>
       <CircularProgressbar
-        className='progress-bar'
+        className='cprogress-bar'
         value={percentage} 
         text={minutes + ":" + seconds} 
         styles={buildStyles({
