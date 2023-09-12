@@ -83,12 +83,12 @@ const SessionForm = (closeModal) => {
         type="text"
         placeholder='e.g. Maths homework'
         value={title}
-        onChange={handleTitle} />
+        onChange={handleTitle}
+        className='text-box' />
       </div>
       
       <div className="form-input">
       <label htmlFor="desc">Description:</label>
-      <br />
         <textarea 
         name="desc" 
         value={desc}
@@ -116,14 +116,17 @@ const SessionForm = (closeModal) => {
           <p>&#128512;</p>
         </span>
       </div>
-      <button
-      type='submit'
-      onClick={handleSubmit}
+      <div>
+        <button
+        type='submit'
+        onClick={handleSubmit}
+        
+        >Add session</button>
+        <button
+          onClick={() => closeModal()}
+          >Cancel</button>
+      </div>
       
-      >Add session</button>
-      <button
-        onClick={() => closeModal()}
-        >Cancel</button>
       <p>{message}</p>
     </form>
   )
