@@ -8,3 +8,5 @@ export { default as DogCard } from "./DogCard";
 export { default as DogLevel } from "./DogLevel";
 
 export { default as TaskPopUp } from "./TaskPopUp";
+
+export { default as TaskGallery } from "./TaskGallery";

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TaskPopUp from "../TaskPopUp";
+import TaskGallery from "../TaskGallery";
 import { useState } from "react";
 
 function ProfileCard({ user }) {
@@ -34,8 +35,9 @@ function ProfileCard({ user }) {
         See Completed Tasks
       </button>
       <TaskPopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <h3>Popup content</h3>
-        <p> This is where the tasks will be</p>
+        <TaskGallery />
+        <h3>Your Tasks</h3>
+        <p>This is where the tasks will be</p>
       </TaskPopUp>
     </div>
   );
