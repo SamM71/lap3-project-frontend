@@ -116,6 +116,24 @@ nav {
   list-style: none;
 }
 
+.timer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: purple;
+}
+
+.animation {
+  
+}
+
 .timer-btns {
   margin: 20px;
   cursor: pointer;

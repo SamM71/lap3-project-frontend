@@ -64,34 +64,46 @@ const Timer = () => {
   if (minutes < 10) minutes = '0' + minutes
 
   return (
-    <>
-      <CircularProgressbar
-        className='cprogress-bar'
-        value={percentage} 
-        text={minutes + ":" + seconds} 
-        styles={buildStyles({
-          textColor: 'white',
-          pathColor: mode === 'work' ? 'red' : 'green',
-          tailColor: 'grey'
-      })}/>
-      <div>
-        {
-          isPaused ? 
+    <div className='timer-container'>
+      <div className='message'>
+        <header>
+          Time to {
+            mode === 'work' ? 'work!' : 'relax!'
+          }
+        </header>
+      </div>
+      <div className='timer'>
+
+        <CircularProgressbar
+          className='cprogress-bar'
+          value={percentage} 
+          text={minutes + ":" + seconds} 
+          styles={buildStyles({
+            textColor: 'white',
+            pathColor: mode === 'work' ? 'red' : 'green',
+            tailColor: 'grey'
+          })}/>
+        <div>
+          {
+            isPaused ? 
             <StartButton onClick={() => {
-            setIsPaused(false)
-            isPausedRef.current = false}}/> 
-            : 
-            <PauseButton onClick={() => {
-            setIsPaused(true)
-            isPausedRef.current = true}}/>
-        }
+              setIsPaused(false)
+              isPausedRef.current = false}}/> 
+              : 
+              <PauseButton onClick={() => {
+                setIsPaused(true)
+                isPausedRef.current = true}}/>
+              }
+        </div>
       </div>
-      <div>
-        {
-          mode === 'work' ? <WalkingAnimation /> : <SleepingAnimation />
-        }
+      <div className='animation'>
+        <div>
+          {
+            mode === 'work' ? <WalkingAnimation /> : <SleepingAnimation />
+          }
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
