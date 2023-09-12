@@ -1,27 +1,21 @@
 import React from "react";
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { screen, render, cleanup } from "@testing-library/react";
-
-import { MemoryRouter } from "react-router-dom";
-
 import matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
-import NavBar from ".";
+import Timer from ".";
 
 describe("NavBar component", () => {
   beforeEach(() => {
     render(
-      <MemoryRouter>
-        <NavBar />
-      </MemoryRouter>
+      <Timer />
     );
   });
 
-  it("Displays a nav bar with four children", () => {
-    const nav = screen.getByRole("navigation");
+  it("Displays a progressbar", () => {
+    const progressbar = screen.getByText("NaN:NaN")
 
-    expect(nav).toBeInTheDocument();
-    expect(nav.childNodes.length).toBe(5);
+    expect(progressbar).toBeInTheDocument();
   });
 
   afterEach(() => {
