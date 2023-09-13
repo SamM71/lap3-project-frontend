@@ -6,6 +6,10 @@
   background-color: #31384a;
 }
 
+body {
+  background-color: #31384A;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -99,7 +103,7 @@
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
   min-height: 10vh;
 }
@@ -107,9 +111,48 @@ nav {
 .nav-links {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
   list-style: none;
+}
+
+.timer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: purple;
+}
+
+/* .animation {
+  
+} */
+
+.timer-btns {
+  margin: 20px;
+  cursor: pointer;
+}
+
+.cprogress-bar {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+  stroke-width: 5;
+}
+
+.CircularProgressBar-trail {
+  stroke-width: 5;
+}
+
+.CircularProgressBar-path {
+  stroke-width: 5;
 }
 
 a {
@@ -187,6 +230,7 @@ a {
   color: #aaa;
 }
 
+
 .flip-container {
   perspective: 1000px;
   width: 500px;
@@ -219,4 +263,10 @@ a {
 
 .back {
   transform: rotateY(180deg);
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-gap: 20px; */
+
 }

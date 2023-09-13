@@ -1,11 +1,11 @@
 import React from 'react'
 import "@lottiefiles/lottie-player";
-import { Animations } from '../../components'
 
 const Home = () => {
+
   return (
     <>
-      <Animations />
+    <h1>PomoDogo</h1>
     </>
   )
 }

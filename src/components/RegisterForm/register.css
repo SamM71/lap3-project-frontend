@@ -1,0 +1,43 @@
+/* div {
+    padding: 1% 60% 0% 1%
+  } */
+  /*  Positioning of First Name */
+  label {
+    display: block;
+  }
+  /* For the Alex Text*/
+  input::placeholder { 
+    color: #dfdfdf; 
+  }
+  /* Makes Alex transparent when the user clicks on it */
+  input:focus::placeholder { 
+    color: transparent;
+  }
+  /* Positioning of the First Name label*/
+  .ifta-label {
+    /* margin-bottom:-30px; */
+    z-index:1;
+    position:relative;
+    /* padding:0px 10px 0 20px; */
+    pointer-events:none;
+  }
+  .ifta-field {
+    border:0;
+    border-radius:6px;
+    /* padding:35px 20px 15px; */
+    padding: 3%;
+    /* width:100%; */
+    box-shadow:inset 0 0 0 1px white;
+    color: white;
+    background-color: #FFFFFF15;
+  }
+  .ifta-field:focus {
+    appearance: none;
+    outline:none; /* Make sure extra border is not added*/
+    box-shadow:inset 0 0 0 2px white; /* inset makes sure box shadow makes the content look raised*/
+    background-color: transparent;
+  }
+  
+  .group:focus-within label {
+    color:white !important; /* makes sure that CSS adds more importance*/
+  }
