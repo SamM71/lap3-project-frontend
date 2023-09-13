@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './index.css'
 
-const SessionForm = (closeModal) => {
+const SessionForm = (props) => {
   const [title, setTitle] = useState('')
   const [desc, setDesc] = useState('')
   const [mood, setMood] = useState('')
@@ -35,7 +35,7 @@ const SessionForm = (closeModal) => {
     if (title.length > 0 && desc.length > 0 && mood.length > 0) {
       fetch('http://localhost:8080/tasks', {
         method: 'POST',
-        body: JSON.stringify({name: title, description: desc, mood: mood, completed_at: Date()}),
+        body: JSON.stringify({name: title, description: desc, mood: mood}),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
@@ -45,7 +45,8 @@ const SessionForm = (closeModal) => {
         setMessage('Sessions added successfully.');
         setTimeout(() => {
           setMessage('')
-        }, 5000)
+          props.closeModal();
+        }, 2000)
         console.log(data)
       })
       .catch((err) => {
@@ -53,7 +54,8 @@ const SessionForm = (closeModal) => {
         setMessage('There was a problem in logging your session');
         setTimeout(() => {
           setMessage('')
-        }, 5000)
+          props.closeModal()
+        }, 2000)
       });
       setTitle('');
       setDesc('');
@@ -123,7 +125,7 @@ const SessionForm = (closeModal) => {
         
         >Add session</button>
         <button
-          onClick={() => closeModal()}
+          onClick={() => props.closeModal()}
           >Cancel</button>
       </div>
       

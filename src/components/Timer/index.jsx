@@ -4,7 +4,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import { StartButton, PauseButton, WalkingAnimation, SleepingAnimation } from '../';
 import TimerContext from '../../contexts';
 
-const Timer = () => {
+const Timer = (props) => {
   const timerInfo = useContext(TimerContext)
 
   const [isPaused, setIsPaused] = useState(true)
@@ -17,10 +17,13 @@ const Timer = () => {
   let player = document.querySelector("lottie-player")
 
   function initTimer() {
-    console.log("line 15", timerInfo.workMinutes)
-    secondsLeftRef.current = timerInfo.workMinutes * 60
+    if (mode === "work") {
+      secondsLeftRef.current = timerInfo.workMinutes * 60
+
+    } else {
+      secondsLeftRef.current = timerInfo.breakMinutes * 60
+    }
     setSecondsLeft(secondsLeftRef.current)
-    console.log("line 17", secondsLeftRef.current)
   }
   
   function tick() {
@@ -30,12 +33,20 @@ const Timer = () => {
   
   useEffect(() => {
     function switchMode() {
+
       const nextMode = modeRef.current === 'work' ? 'break' : 'work'
       setMode(nextMode)
       modeRef.current = nextMode
+
       const nextSeconds = (nextMode === 'work' ? timerInfo.workMinutes : timerInfo.breakMinutes) * 60
       setSecondsLeft(nextSeconds)
       secondsLeftRef.current = nextSeconds
+
+      if (modeRef.current === 'break') {
+        setSecondsLeft(5*60)
+      secondsLeftRef.current = 5*60
+        props.openModal()
+      }
     }
     
     initTimer()
@@ -50,8 +61,11 @@ const Timer = () => {
         return switchMode()
       }
       tick()
-    }, 1000)
-    return () => clearInterval(interval)
+    }, 10)
+
+    return () => {
+      clearInterval(interval)
+    }
   }, [timerInfo])
 
   const totalSeconds = mode === 'work' ? timerInfo.workMinutes * 60 : timerInfo.breakMinutes * 60 
