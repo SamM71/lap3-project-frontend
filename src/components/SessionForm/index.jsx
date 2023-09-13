@@ -35,7 +35,7 @@ const SessionForm = (closeModal) => {
     if (title.length > 0 && desc.length > 0 && mood.length > 0) {
       fetch('http://localhost:8080/tasks', {
         method: 'POST',
-        body: JSON.stringify({name: title, description: desc, mood: mood, completed_at: Date()}),
+        body: JSON.stringify({name: title, description: desc, mood: mood}),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
@@ -64,14 +64,6 @@ const SessionForm = (closeModal) => {
       }, 5000)
     }
   }
-
-  // function closeForm() {
-  //   if(message === 'Sessions added successfully.') {
-  //     return closeModal
-  //   } else {
-  //     return openModal
-  //   }
-  // }
 
   return (
     <form id='session-form'>
@@ -120,7 +112,6 @@ const SessionForm = (closeModal) => {
         <button
         type='submit'
         onClick={handleSubmit}
-        
         >Add session</button>
         <button
           onClick={() => closeModal()}
