@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './index.css'
 
-const SessionForm = (closeModal) => {
+const SessionForm = (props) => {
   const [title, setTitle] = useState('')
   const [desc, setDesc] = useState('')
   const [mood, setMood] = useState('')
@@ -45,7 +45,8 @@ const SessionForm = (closeModal) => {
         setMessage('Sessions added successfully.');
         setTimeout(() => {
           setMessage('')
-        }, 5000)
+          props.closeModal();
+        }, 2000)
         console.log(data)
       })
       .catch((err) => {
@@ -53,7 +54,8 @@ const SessionForm = (closeModal) => {
         setMessage('There was a problem in logging your session');
         setTimeout(() => {
           setMessage('')
-        }, 5000)
+          props.closeModal()
+        }, 2000)
       });
       setTitle('');
       setDesc('');
@@ -114,7 +116,7 @@ const SessionForm = (closeModal) => {
         onClick={handleSubmit}
         >Add session</button>
         <button
-          onClick={() => closeModal()}
+          onClick={() => props.closeModal()}
           >Cancel</button>
       </div>
       
