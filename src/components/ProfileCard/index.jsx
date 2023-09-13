@@ -4,7 +4,7 @@ import TaskPopUp from "../TaskPopUp";
 import TaskGallery from "../TaskGallery";
 import { useState } from "react";
 
-function ProfileCard({ user }) {
+function ProfileCard({ user, onFlip }) {
   const [buttonPopup, setButtonPopup] = useState(false);
   return (
     <div
@@ -17,6 +17,7 @@ function ProfileCard({ user }) {
         textAlign: "center",
         height: "100%",
         boxSizing: "border-box",
+        overflowY: "auto",
       }}
     >
       <img
@@ -28,10 +29,7 @@ function ProfileCard({ user }) {
         {user.firstName} {user.lastName}
       </h1>
       <p>Email: {user.email}</p>
-      <button
-        style={{ marginTop: "auto" }}
-        onClick={() => setButtonPopup(true)}
-      >
+      <button style={{ marginTop: "auto" }} onClick={onFlip}>
         See Completed Tasks
       </button>
       <TaskPopUp trigger={buttonPopup} setTrigger={setButtonPopup}>

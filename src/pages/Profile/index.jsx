@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ProfileCard from "../../components/ProfileCard";
-import { DogCard, DogLevel } from "../../components";
+import { DogCard, DogLevel, TaskGallery } from "../../components";
 import pp from "../../assets/pp.jpeg";
 
 function Profile() {
@@ -10,10 +10,23 @@ function Profile() {
     lastName: "Rowe",
     email: "tim.row@example.com",
   };
+  const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <div className="profile-container">
-      <ProfileCard user={user} />
+      <div
+        className={`flip-container ${isFlipped ? "flipped" : ""}`}
+        style={{ height: "100%" }}
+      >
+        <div className="flipper">
+          <div className="front">
+            <ProfileCard user={user} onFlip={() => setIsFlipped(!isFlipped)} />
+          </div>
+          <div className="back">
+            <TaskGallery onFlip={() => setIsFlipped(!isFlipped)} />
+          </div>
+        </div>
+      </div>
       <div className="dog-container">
         <h1>Your Dog</h1>
         <DogCard />

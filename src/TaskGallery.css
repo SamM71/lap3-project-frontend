@@ -2,6 +2,8 @@
   padding: 20px;
   border-radius: 5px;
   background-color: #f9f9f9;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .TaskGallery h2 {
