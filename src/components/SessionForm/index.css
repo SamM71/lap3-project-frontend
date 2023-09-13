@@ -1,0 +1,51 @@
+#session-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  height: auto;
+  font-size: 20px;
+}
+
+.form-input {
+  padding:10px;
+}
+
+label{
+  margin: 0px;
+}
+
+.text-box {
+  font-size: 20px;
+  padding: 5px;
+}
+
+span>p{
+  font-size: 37px;
+  border: 2px solid transparent;
+  border-radius: 1vh;
+  margin: 0.7vh 0.7vw;
+}
+
+span>p:hover{
+  border-color: black;
+  cursor: pointer;
+}
+
+.mood-form{
+  display: flex;
+  margin: 0vh;
+}
+
+form>div>button{
+  padding: 5px;
+  font-size: 16px;
+  margin: 1.5vh 2vw;
+}
+
+form>div>button:hover{
+  cursor: pointer;
+}
+
+
