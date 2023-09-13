@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+
 const styles = ({ isActive }) => ({ color: isActive ? 'blue' : '#2B061E'});
 
 const NavBar = () => {

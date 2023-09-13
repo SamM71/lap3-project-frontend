@@ -9,5 +9,5 @@ export { default as PauseButton } from './PauseButton'
 export { default as WalkingAnimation } from './WalkingAnimation'
 export { default as SleepingAnimation } from './SleepingAnimation'
 export { default as TaskPopUp } from "./TaskPopUp";
-
+export { default as SessionForm } from "./SessionForm"
 export { default as TaskGallery } from "./TaskGallery";
