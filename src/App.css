@@ -135,7 +135,10 @@ nav {
 } */
 
 .timer-btns {
-  margin: 20px;
+  background-color: transparent;
+  border:0;
+  display: inline-block;
+  width: 50px;
   cursor: pointer;
 }
 
