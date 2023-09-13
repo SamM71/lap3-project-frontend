@@ -3,7 +3,7 @@ import LottiePlayer from "../LottiePlayer";
 import { useForm } from "react-hook-form";
 
 
-const RegisterForm = () => {
+const LoginForm = () => {
 
 
   const { register, handleSubmit } = useForm();
@@ -23,10 +23,10 @@ const RegisterForm = () => {
        />
       </div>
     <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
-      <label>Email</label><br /> 
-      <input {...register("email")} type="email" placeholder="email" />
-      <label>Password</label><br /> 
-      <input {...register("password")} type="password" placeholder="••••••••" />
+        <label for="email-input">Email</label><br /> 
+        <input {...register("email")} id="email-input" type="email" placeholder="email" />
+        <label for="password-input">New Password</label><br /> 
+        <input {...register("password")} id="password-input" type="password" placeholder="••••••••" />
       <p>{data}</p>
       <input type="submit" />
     </form>
@@ -34,4 +34,4 @@ const RegisterForm = () => {
   )
 }
 
-export default RegisterForm
+export default LoginForm
