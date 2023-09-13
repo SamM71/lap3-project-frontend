@@ -11,3 +11,4 @@ export { default as SleepingAnimation } from './SleepingAnimation'
 export { default as TaskPopUp } from "./TaskPopUp";
 export { default as SessionForm } from "./SessionForm"
 export { default as TaskGallery } from "./TaskGallery";
+export { default as EndTimerButton } from "./EndTimerButton"

@@ -1,25 +1,33 @@
 import React, { useEffect, useState, useRef, useContext } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { StartButton, PauseButton, WalkingAnimation, SleepingAnimation } from '../';
+import { StartButton, PauseButton, WalkingAnimation, SleepingAnimation, EndTimerButton } from '../';
 import TimerContext from '../../contexts';
 
 const Timer = (props) => {
   const timerInfo = useContext(TimerContext)
-
+  
   const [isPaused, setIsPaused] = useState(true)
   const [secondsLeft, setSecondsLeft] = useState(0)
   const [mode, setMode] = useState('work')
   const secondsLeftRef = useRef(secondsLeft)
   const isPausedRef = useRef(isPaused)
   const modeRef = useRef(mode)
+  
+  const totalSeconds = mode === 'work' ? timerInfo.workMinutes * 60 : timerInfo.breakMinutes * 60 
+  const percentage = Math.round(secondsLeft / totalSeconds * 100)
+
+  let minutes = Math.floor(secondsLeft / 60)
+  let seconds = Math.floor(secondsLeft % 60)
+  
+  if (seconds < 10) seconds = '0' + seconds
+  if (minutes < 10) minutes = '0' + minutes
 
   let player = document.querySelector("lottie-player")
-
+  
   function initTimer() {
     if (mode === "work") {
       secondsLeftRef.current = timerInfo.workMinutes * 60
-
     } else {
       secondsLeftRef.current = timerInfo.breakMinutes * 60
     }
@@ -31,23 +39,22 @@ const Timer = (props) => {
     setSecondsLeft(prev => prev -1) // line doesn't seem to do anything but the DOM won't update without it
   }
   
-  useEffect(() => {
-    function switchMode() {
+  function switchMode() {
+    console.log("hello")
+    const nextMode = modeRef.current === 'work' ? 'break' : 'work'
+    setMode(nextMode)
+    modeRef.current = nextMode
 
-      const nextMode = modeRef.current === 'work' ? 'break' : 'work'
-      setMode(nextMode)
-      modeRef.current = nextMode
+    const nextSeconds = (nextMode === 'work' ? timerInfo.workMinutes : timerInfo.breakMinutes) * 60
+    setSecondsLeft(nextSeconds)
+    secondsLeftRef.current = nextSeconds
 
-      const nextSeconds = (nextMode === 'work' ? timerInfo.workMinutes : timerInfo.breakMinutes) * 60
-      setSecondsLeft(nextSeconds)
-      secondsLeftRef.current = nextSeconds
-
-      if (modeRef.current === 'break') {
-        setSecondsLeft(5*60)
-      secondsLeftRef.current = 5*60
-        props.openModal()
-      }
+    if (modeRef.current === 'break') {
+      props.openModal()
     }
+  }
+
+  useEffect(() => {
     
     initTimer()
     
@@ -68,13 +75,6 @@ const Timer = (props) => {
     }
   }, [timerInfo])
 
-  const totalSeconds = mode === 'work' ? timerInfo.workMinutes * 60 : timerInfo.breakMinutes * 60 
-  const percentage = Math.round(secondsLeft / totalSeconds * 100)
-  let minutes = Math.floor(secondsLeft / 60)
-  let seconds = Math.floor(secondsLeft % 60)
-
-  if (seconds < 10) seconds = '0' + seconds
-  if (minutes < 10) minutes = '0' + minutes
 
   return (
     <div className='timer-container'>
@@ -110,7 +110,10 @@ const Timer = (props) => {
                 setIsPaused(true)
                 isPausedRef.current = true
                 player.pause()}}/>
-              }
+          }
+          <EndTimerButton onClick={() => {
+              switchMode();
+            }}/>
         </div>
       </div>
       <div className='animation'>
