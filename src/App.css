@@ -274,6 +274,7 @@ a {
 
 .back {
   transform: rotateY(180deg);
+}
 
 .grid-container {
   display: grid;
