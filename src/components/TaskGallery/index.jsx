@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../../src/TaskGallery.css";
 
-function TaskGallery() {
+function TaskGallery({ onFlip }) {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,14 @@ function TaskGallery() {
             <div key={task._id} className="taskContainer">
               <p>Task: {task.task}</p>
               <p>Description: {task.description}</p>
-              <p>Completed at: {task.completed_at}</p>
+              <p>Mood: {task.mood}</p>
+              <p>Completed on: {task.completed_at}</p>
+              <button
+                style={{ position: "absolute", top: "10px", right: "10px" }}
+                onClick={onFlip}
+              >
+                Back to Profile
+              </button>
             </div>
           ))
         ) : (

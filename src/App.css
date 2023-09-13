@@ -151,6 +151,8 @@ a {
   padding: 20px;
   border-radius: 5px;
   background-color: #f9f9f9;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .TaskGallery h2 {
@@ -183,4 +185,38 @@ a {
 .TaskGallery .noTasks {
   text-align: center;
   color: #aaa;
+}
+
+.flip-container {
+  perspective: 1000px;
+  width: 500px;
+  height: 100%;
+}
+
+.flipper {
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.flip-container.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
