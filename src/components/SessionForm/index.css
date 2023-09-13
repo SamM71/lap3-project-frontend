@@ -26,6 +26,7 @@ span>p{
   border: 2px solid transparent;
   border-radius: 1vh;
   margin: 0.7vh 0.7vw;
+  caret-color: transparent;
 }
 
 span>p:hover{
