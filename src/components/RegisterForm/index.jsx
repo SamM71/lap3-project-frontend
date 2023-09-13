@@ -26,16 +26,16 @@ const RegisterForm = () => {
       </div>
     <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
       {/*<Header />*/}
-      <label>Name</label><br /> 
-      <input {...register("name")} type="text" placeholder="Name" />
-      <label>Username</label><br /> 
-      <input {...register("username")} type="text" placeholder="username" />
-      <label>Email</label><br /> 
-      <input {...register("email")} type="email" placeholder="email" />
-      <label>New Password</label><br /> 
-      <input {...register("password")} type="password" placeholder="••••••••" />
-      <label>Confirm Password</label><br /> 
-      <input {...register("password")} type="password" placeholder="••••••••" />
+      <label for="name-input">Your Name</label><br /> 
+      <input {...register("name")} id="name-input" type="text" placeholder="Name" />
+      <label for="username-input">Username</label><br /> 
+      <input {...register("username")} id="username-input" type="text" placeholder="username" />
+      <label for="email-input">Email</label><br /> 
+      <input {...register("email")} id="email-input" type="email" placeholder="email" />
+      <label for="new-password-input">New Password</label><br /> 
+      <input {...register("password")} id="new-password-input" type="password" placeholder="••••••••" />
+      <label for="confirm-password-input">Confirm Password</label><br /> 
+      <input {...register("password")} id="confirm-password-input" type="password" placeholder="••••••••" />
       <p>{data}</p>
       <input type="submit" />
     </form>
