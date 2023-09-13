@@ -30,16 +30,15 @@ const Pomodoro = () => {
   }
   return (
     <>
-    <TimerContext.Provider value ={{
-      workMinutes,
-      setWorkMinutes,
-      breakMinutes,
-      setBreakMinutes
-    }}>
-      <Timer />
-    </TimerContext.Provider>
+      <TimerContext.Provider value ={{
+        workMinutes,
+        setWorkMinutes,
+        breakMinutes,
+        setBreakMinutes
+      }}>
+        <Timer openModal={openModal} closeModal={closeModal}/>
+      </TimerContext.Provider>
 
-    <button onClick={openModal}>Open Session Form</button>
       <Modal
       isOpen={modalIsOpen}
       style={customStyles}
