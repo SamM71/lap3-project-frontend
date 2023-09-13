@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.css'
 
 const SessionForm = (props) => {
@@ -6,21 +6,26 @@ const SessionForm = (props) => {
   const [desc, setDesc] = useState('')
   const [mood, setMood] = useState('')
   const [message, setMessage] = useState('')
+  const [isActive, setIsActive] = useState('');
 
-  function veryGoodMood() {
+  function veryGoodMood(e) {
     setMood("Very Good")
+    setIsActive(e.target.id)
   }
 
-  function goodMood() {
+  function goodMood(e) {
     setMood("Good")
+    setIsActive(e.target.id)
   }
 
-  function badMood() {
-    setMood("Very Good")
+  function badMood(e) {
+    setMood("Bad")
+    setIsActive(e.target.id)
   }
 
-  function VeryBadMood() {
+  function veryBadMood(e) {
     setMood("Very Bad")
+    setIsActive(e.target.id)
   }
 
   function handleTitle(e) {
@@ -67,6 +72,8 @@ const SessionForm = (props) => {
     }
   }
 
+  
+
   return (
     <form id='session-form'>
       <h1>Add to your Activity Log</h1>
@@ -94,22 +101,42 @@ const SessionForm = (props) => {
       <p>How do you feel that session went?</p>
       <div className="mood-form">
         <span
-        onClick={VeryBadMood}>
-          <p>&#128530;</p>
+        onClick={veryBadMood}>
+          <p 
+            id="veryBadMood"
+            style={{
+              borderColor: isActive === "veryBadMood" ? 'black' : 'transparent'
+            }}
+          >&#128530;</p>
         </span>
         <span
         onClick={badMood}>
-          <p>&#128533;</p>
+          <p  
+          id="badMood"
+          style={{
+            borderColor: isActive === "badMood" ? 'black' : 'transparent'
+          }}>&#128533;</p>
         </span>
         <span
         onClick={goodMood}>
-          <p>&#128522;</p>
+          <p 
+          id="goodMood"
+          style={{
+            borderColor: isActive === "goodMood" ? 'black' : 'transparent'
+          }}
+          >&#128522;</p>
         </span>
         <span
         onClick={veryGoodMood}>
-          <p>&#128512;</p>
+          <p 
+          id="veryGoodMood"
+          style={{
+            borderColor: isActive === "veryGoodMood" ? 'black' : 'transparent'
+          }}
+          >&#128512;</p>
         </span>
       </div>
+      <p>{mood}</p>
       <div>
         <button
         type='submit'
