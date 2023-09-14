@@ -118,7 +118,10 @@ const Timer = (props) => {
                 player.pause()}}/>
           }
           <EndTimerButton onClick={() => {
-              switchMode();
+              switchMode()
+              setIsPaused(true)
+              isPausedRef.current = true
+              player.pause();
             }}/>
         </div>
       </div>

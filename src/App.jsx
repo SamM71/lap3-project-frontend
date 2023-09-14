@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Home, Profile, Login, Register, Pomodoro, Logout } from "./pages";
+import { Home, Profile, Login, Register, Pomodoro, Logout, NotFound } from "./pages";
 import { NavBar } from "./components";
 
 const App = () => {
@@ -15,6 +15,7 @@ const App = () => {
           <Route path="register" element={<Register />} />
           <Route path="pomodoro" element={<Pomodoro />} />
           <Route path="logout" element={<Logout />} />
+          <Route path="*" element={<NotFound />}/>
         </Route>
       </Routes>
     </>

@@ -14,29 +14,32 @@ function Profile() {
   const [taskCount, setTaskCount] = useState(0);
 
   return (
-    <div className="profile-container">
-      <div
-        className={`flip-container ${isFlipped ? "flipped" : ""}`}
-        style={{ height: "100%" }}
-      >
-        <div className="flipper">
-          <div className="front">
-            <ProfileCard user={user} onFlip={() => setIsFlipped(!isFlipped)} />
-          </div>
-          <div className="back">
-            <TaskGallery
-              setTaskCount={setTaskCount}
-              onFlip={() => setIsFlipped(!isFlipped)}
-            />
+    <>
+      <Redirect mustBeLoggedIn={true}/>
+      <div className="profile-container">
+        <div
+          className={`flip-container ${isFlipped ? "flipped" : ""}`}
+          style={{ height: "100%" }}
+        >
+          <div className="flipper">
+            <div className="front">
+              <ProfileCard user={user} onFlip={() => setIsFlipped(!isFlipped)} />
+            </div>
+            <div className="back">
+              <TaskGallery
+                setTaskCount={setTaskCount}
+                onFlip={() => setIsFlipped(!isFlipped)}
+              />
+            </div>
           </div>
         </div>
+        <div className="dog-container">
+          <h1>Your Dog</h1>
+          <DogCard />
+          <DogLevel taskCount={taskCount} />
+        </div>
       </div>
-      <div className="dog-container">
-        <h1>Your Dog</h1>
-        <DogCard />
-        <DogLevel taskCount={taskCount} />
-      </div>
-    </div>
+    </>
   );
 }
 
