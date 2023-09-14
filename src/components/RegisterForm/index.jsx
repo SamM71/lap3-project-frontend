@@ -12,12 +12,12 @@ const RegisterForm = () => {
   const [data, setData] = useState("");
 
   return (
-    <div className="grid-container">
+    <div className="formContainer">
          <div className='left'>
             <LottiePlayer
-            src="https://lottie.host/a45a8085-dab9-4bf7-8aee-35a38ebf4e42/aDFz0w3EDb.json"             // background="#FFFFFF"
+            src="https://lottie.host/b34b9607-317a-4492-a003-bb64f3747aa0/DF0JnCnUXJ.json"             // background="#FFFFFF"
              speed="0.8"
-             style={{ width: "auto", height: "400px" }}
+             style={{ width: "auto", height: "150px" }}
              loop
            autoplay
             direction="1"
@@ -27,15 +27,15 @@ const RegisterForm = () => {
     <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
       {/*<Header />*/}
       <label for="name-input">Your Name</label><br /> 
-      <input {...register("name")} id="name-input" type="text" placeholder="Name" />
+      <input {...register("name")} id="name-input" type="text" placeholder="" />
       <label for="username-input">Username</label><br /> 
-      <input {...register("username")} id="username-input" type="text" placeholder="username" />
+      <input {...register("username")} id="username-input" type="text" placeholder="" />
       <label for="email-input">Email</label><br /> 
-      <input {...register("email")} id="email-input" type="email" placeholder="email" />
+      <input {...register("email")} id="email-input" type="email" placeholder="" />
       <label for="new-password-input">New Password</label><br /> 
-      <input {...register("password")} id="new-password-input" type="password" placeholder="••••••••" />
+      <input {...register("password")} id="new-password-input" type="password" placeholder="" />
       <label for="confirm-password-input">Confirm Password</label><br /> 
-      <input {...register("password")} id="confirm-password-input" type="password" placeholder="••••••••" />
+      <input {...register("password")} id="confirm-password-input" type="password" placeholder="" />
       <p>{data}</p>
       <input type="submit" />
     </form>
