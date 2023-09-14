@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Timer } from '../../components'
 import TimerContext from '../../contexts'
-import { SessionForm } from '../../components'
+import { SessionForm, Redirect } from '../../components'
 import Modal from 'react-modal'
+import { updateNav } from '../../scripts'
 
 const Pomodoro = () => {
   const [workMinutes, setWorkMinutes] = useState(25)
@@ -18,6 +19,7 @@ const Pomodoro = () => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+      backgroundColor: '#31384a',
     },
 
   };
@@ -28,8 +30,14 @@ const Pomodoro = () => {
   function closeModal() {
     setIsOpen(false);
   }
+
+  useEffect(() => {
+    updateNav()
+  }, [])
+
   return (
     <>
+      <Redirect />
       <TimerContext.Provider value ={{
         workMinutes,
         setWorkMinutes,

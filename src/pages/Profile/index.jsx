@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProfileCard from "../../components/ProfileCard";
-import { DogCard, DogLevel, TaskGallery } from "../../components";
+import { DogCard, DogLevel, TaskGallery, Redirect } from "../../components";
 import pp from "../../assets/pp.jpeg";
 
 function Profile() {
