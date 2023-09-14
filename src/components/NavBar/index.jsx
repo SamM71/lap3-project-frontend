@@ -7,12 +7,10 @@ const NavBar = () => {
   return (
     <>
       <header>
-        <nav>
-          <NavLink to="/" style={styles} className={"nav-links"}>Home</NavLink>
+        <nav id='navBar'>
           <NavLink to="/pomodoro" style={styles} className={"nav-links"}>Pomodoro</NavLink>
           <NavLink to="/profile" style={styles} className={"nav-links"}>Profile</NavLink>
-          <NavLink to="/login" style={styles} className={"nav-links"}>Login</NavLink>
-          <NavLink to="/register" style={styles} className={"nav-links"}>Register</NavLink>
+          <NavLink to="/logout" style={styles} className={"nav-links"}>Logout</NavLink>
         </nav>
       </header>
       <Outlet />

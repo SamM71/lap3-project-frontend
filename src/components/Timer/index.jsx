@@ -3,6 +3,7 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { StartButton, PauseButton, WalkingAnimation, SleepingAnimation, EndTimerButton } from '../';
 import TimerContext from '../../contexts';
+import bark from "../../assets/dog-barking.mp3"
 
 const Timer = (props) => {
   const timerInfo = useContext(TimerContext)
@@ -24,6 +25,10 @@ const Timer = (props) => {
   if (minutes < 10) minutes = '0' + minutes
 
   let player = document.querySelector("lottie-player")
+
+  function playBark() {
+    new Audio(bark).play()
+  }
   
   function initTimer() {
     if (mode === "work") {
@@ -63,6 +68,7 @@ const Timer = (props) => {
         return;
       }
       if (secondsLeftRef.current === 0) {
+        playBark()
         setIsPaused(true)
         isPausedRef.current = true
         return switchMode()
