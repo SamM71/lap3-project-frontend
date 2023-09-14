@@ -107,7 +107,7 @@ const SessionForm = (props) => {
           <p
             id="veryBadMood"
             style={{
-              borderColor: isActive === "veryBadMood" ? "black" : "transparent",
+              borderColor: isActive === "veryBadMood" ? "white" : "transparent",
             }}
           >
             &#128530;
@@ -117,7 +117,7 @@ const SessionForm = (props) => {
           <p
             id="badMood"
             style={{
-              borderColor: isActive === "badMood" ? "black" : "transparent",
+              borderColor: isActive === "badMood" ? "white" : "transparent",
             }}
           >
             &#128533;
@@ -127,7 +127,7 @@ const SessionForm = (props) => {
           <p
             id="goodMood"
             style={{
-              borderColor: isActive === "goodMood" ? "black" : "transparent",
+              borderColor: isActive === "goodMood" ? "white" : "transparent",
             }}
           >
             &#128522;
@@ -138,7 +138,7 @@ const SessionForm = (props) => {
             id="veryGoodMood"
             style={{
               borderColor:
-                isActive === "veryGoodMood" ? "black" : "transparent",
+                isActive === "veryGoodMood" ? "white" : "transparent",
             }}
           >
             &#128512;
