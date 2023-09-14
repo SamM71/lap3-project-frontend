@@ -19,4 +19,5 @@ Create an account, use the pomodoro timer, and record your completed tasks! Comp
 | `/pomodoro` | The main page of the app. Has a pomodoro timer. |
 | `/profile` | View your completed tasks/sessions and the happiness of your dog. |
 | `/logout` | Logs you out and redirects to homepage. |
+
 Please note that certain pages can only be accessed once you are logged in, and others can only be accessed when you are logged out.
