@@ -7,24 +7,29 @@ const SessionForm = (props) => {
   const [mood, setMood] = useState("");
   const [message, setMessage] = useState("");
   const [isActive, setIsActive] = useState("");
+  const [moodEmoji, setMoodEmoji] = useState("");
 
   function veryGoodMood(e) {
     setMood("Very Good");
+    setMoodEmoji("😀");
     setIsActive(e.target.id);
   }
 
   function goodMood(e) {
     setMood("Good");
+    setMoodEmoji("😊");
     setIsActive(e.target.id);
   }
 
   function badMood(e) {
     setMood("Bad");
+    setMoodEmoji("😌");
     setIsActive(e.target.id);
   }
 
   function veryBadMood(e) {
     setMood("Very Bad");
+    setMoodEmoji("😒");
     setIsActive(e.target.id);
   }
 
@@ -42,7 +47,11 @@ const SessionForm = (props) => {
 
       fetch("http://localhost:8080/tasks", {
         method: "POST",
-        body: JSON.stringify({ name: title, description: desc, mood: mood }),
+        body: JSON.stringify({
+          name: title,
+          description: desc,
+          mood: moodEmoji,
+        }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
           Authorization: `Bearer ${token}`,

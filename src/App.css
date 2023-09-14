@@ -1,6 +1,5 @@
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 #root {
@@ -17,11 +16,9 @@ html {
 }
 
 body {
-
   margin: 0px;
   padding: 0px;
   background-color: #31384A;
-
 }
 
 footer {
@@ -68,17 +65,15 @@ footer {
 .profile-container {
   display: flex;
   justify-content: space-between;
-  /* border: solid black 1px; */
-  height: 84vh;
+  height: 80vh;
   box-sizing: border-box;
+  
 }
 
 .profile-container > * {
-  width: 40%;
+  width:65%;
   box-sizing: border-box;
- 
   border-radius: 20px;
-
   background-color: #fff;
   margin-right: 7%;
 
@@ -90,17 +85,15 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 20px;
-
-  background: radial-gradient(#96ACE3 8px, #365196 30%, #31384a 70%);
-
+  background: radial-gradient( #365196 30%, #31384a 70%);
   color: white;
-  height: 100%; /* to take full height of the parent container */
+  height: 100%; 
 }
 
 .dog-level-container {
   width: 300px;
   margin-top: 20px;
-  /* color: white; */
+  
 }
 
 .progress-bar {
@@ -264,8 +257,8 @@ a {
 }
 
 .flipper {
-  width: 100%; /* Adjust as needed */
-  height: 100%; /* Adjust as needed */
+  width: 100%; 
+  height: 100%; 
   position: relative;
   transform-style: preserve-3d;
   transition: transform 1s;
@@ -294,7 +287,6 @@ a {
 .formContainer {
   display: grid;
   place-items: center;
-  /* background-color: black; */
   padding: 1%;
   border-radius: 15px;
 }
@@ -343,5 +335,5 @@ input[type="submit"]:hover {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-gap: 20px; */
+ 
 }
