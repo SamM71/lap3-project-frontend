@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-top: 0px;
   margin-bottom: 10vh;
@@ -11,9 +11,13 @@ nav {
 #navBar {
   color: white;
 }
+#imageBox {
+  display: inline-block;
+  font-family: Rubik;
+}
 
 .logout {
-  margin-right: -88vh;
+  /* margin-right: -88vh; */
   margin-left: 76vh;
   
 }
