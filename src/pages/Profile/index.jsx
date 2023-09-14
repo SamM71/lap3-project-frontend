@@ -6,9 +6,9 @@ import pp from "../../assets/pp.jpeg";
 function Profile() {
   const user = {
     profileImage: pp,
-    firstName: "Tim",
-    lastName: "Rowe",
-    email: "tim.row@example.com",
+    firstName: "Phil",
+    lastName: "Right",
+    email: "philright@example.com",
   };
   const [isFlipped, setIsFlipped] = useState(false);
   const [taskCount, setTaskCount] = useState(0);
