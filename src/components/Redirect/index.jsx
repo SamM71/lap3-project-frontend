@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Redirect = () => {
+const Redirect = (props) => {
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -9,6 +9,8 @@ const Redirect = () => {
   
     if (!authenticated) {
       navigate("/", { replace: true })
+    } else if (props.toPomodoro) {
+      navigate("/pomodoro", { replace: true })
     }
   })
   
