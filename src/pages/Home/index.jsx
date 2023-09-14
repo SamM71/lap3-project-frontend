@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "@lottiefiles/lottie-player";
 import LottiePlayer from "../../components/LottiePlayer";
 import './index.css'
 import { Link } from 'react-router-dom'
+import { updateNav } from '../../scripts';
 
 const Home = () => {
+
+  useEffect(() => {
+    updateNav()
+  })
 
   return (
     <>
