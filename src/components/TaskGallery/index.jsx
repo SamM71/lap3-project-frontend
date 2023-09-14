@@ -32,22 +32,22 @@ function TaskGallery({ onFlip, setTaskCount }) {
         {tasks.length > 0 ? (
           tasks.map((task) => (
             <div key={task._id} className="taskContainer">
-              <h3>
-                <span className="taskLabel">Task: </span>
-                {task.name}
-              </h3>
-              <p>
-                <span className="taskLabel">Description: </span>:{" "}
-                {task.description}
-              </p>
-              <p>
-                <span className="taskLabel">Mood: </span>
-                {task.mood}
-              </p>
-              <p>
-                <span className="taskLabel"></span>Completed on:{" "}
-                {task.completed_at}
-              </p>
+              <div className="taskRow">
+                <span className="taskLabel taskCircle">Task:</span>
+                <span className="taskInput">{task.name}</span>
+              </div>
+              <div className="taskRow">
+                <span className="taskLabel">Description:</span>
+                <span>{task.description}</span>
+              </div>
+              <div className="taskRow">
+                <span className="taskLabel">Mood:</span>
+                <span>{task.mood}</span>
+              </div>
+              <div className="taskRow">
+                <span className="taskLabel">Completed on:</span>
+                <span>{task.completed_at}</span>
+              </div>
               <button
                 className="back-to-profile"
                 style={{ position: "absolute", top: "10px", right: "10px" }}
