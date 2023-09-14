@@ -30,11 +30,7 @@ const RegisterForm = () => {
       const responseData = await response.json();
       console.log("Response Data:", responseData);
 
-      if (responseData.token) {
-        console.log("Response Data:", responseData);
-        localStorage.setItem("token", responseData.token);
-        navigate("/login");
-      }
+      navigate("/login");
     } catch (error) {
       console.error("Error:", error);
     }
