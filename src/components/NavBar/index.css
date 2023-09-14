@@ -4,8 +4,12 @@ nav {
   align-items: center;
   margin-top: 0px;
   margin-bottom: 10vh;
-  background: #f4f3ed;
+  background-color: #D9D9D925;
+  color: #f9f9f9;
   padding: 10px;
+}
+#navBar {
+  color: white;
 }
 
 .logout {
