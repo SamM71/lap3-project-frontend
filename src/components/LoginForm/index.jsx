@@ -36,18 +36,19 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="grid-container">
-      <div className="left">
+
+    <div className="formContainer">
+      
         <LottiePlayer
-          src="https://lottie.host/a45a8085-dab9-4bf7-8aee-35a38ebf4e42/aDFz0w3EDb.json" // background="#FFFFFF"
+          src="https://lottie.host/b34b9607-317a-4492-a003-bb64f3747aa0/DF0JnCnUXJ.json" // background="#FFFFFF"
           speed="0.8"
-          style={{ width: "auto", height: "400px" }}
+          style={{ width: "auto", height: "150px" }}
           loop
           autoplay
           direction="1"
           mode="normal"
         />
-      </div>
+     
       <form onSubmit={handleSubmit(onSubmit)}>
         <label for="email-input">Email</label>
         <br />
@@ -63,13 +64,19 @@ const LoginForm = () => {
           {...register("password")}
           id="password-input"
           type="password"
-          placeholder="••••••••"
+          
         />
+
         <p>{data}</p>
         <input type="submit" />
       </form>
     </div>
+
+    
+
+
   );
 };
+
 
 export default LoginForm;
