@@ -16,9 +16,9 @@
   flex-direction: column;
   margin-bottom: 20px;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .TaskGallery .taskContainer p {
@@ -29,6 +29,10 @@
   margin-top: 0;
 }
 
+.TaskGallery .taskContainer p .taskLabel {
+  font-weight: bold; /* Makes the label bold */
+}
+
 .TaskGallery .taskContainer p:last-child {
   margin-bottom: 0;
 }
@@ -36,4 +40,21 @@
 .TaskGallery .noTasks {
   text-align: center;
   color: #aaa;
+}
+
+.TaskGallery .back-to-profile {
+  background-color: #d9d9d9;
+  color: #31384a;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 20%;
+  align-self: center;
+}
+
+.back-to-profile:hover {
+  background-color: #fff;
 }
