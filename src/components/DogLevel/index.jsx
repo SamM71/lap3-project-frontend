@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const DogLevel = () => {
+const DogLevel = ({ taskCount }) => {
   const [level, setLevel] = useState(0);
+
+  useEffect(() => {
+    const newLevel = (taskCount / 10) * 100;
+    setLevel(newLevel);
+  }, [taskCount]);
 
   const handleButtonClick = () => {
     if (level < 100) {
@@ -31,9 +36,9 @@ const DogLevel = () => {
           style={{ width: `${level}%`, backgroundColor: getColor() }}
         ></div>
       </div>
-      <div className="progress-label">{level}%</div>
-      <button onClick={handleButtonClick}>Level</button>
-      <button onClick={handleButtonReset}>Reset</button>
+      <div className="progress-label">Happiness: {level}%</div>
+      {/* <button onClick={handleButtonClick}>Level</button>
+      <button onClick={handleButtonReset}>Reset</button> */}
     </div>
   );
 };

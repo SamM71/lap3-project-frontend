@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProfileCard from "../../components/ProfileCard";
 import { DogCard, DogLevel, TaskGallery } from "../../components";
 import pp from "../../assets/pp.jpeg";
@@ -11,6 +11,7 @@ function Profile() {
     email: "tim.row@example.com",
   };
   const [isFlipped, setIsFlipped] = useState(false);
+  const [taskCount, setTaskCount] = useState(0);
 
   return (
     <div className="profile-container">
@@ -23,14 +24,17 @@ function Profile() {
             <ProfileCard user={user} onFlip={() => setIsFlipped(!isFlipped)} />
           </div>
           <div className="back">
-            <TaskGallery onFlip={() => setIsFlipped(!isFlipped)} />
+            <TaskGallery
+              setTaskCount={setTaskCount}
+              onFlip={() => setIsFlipped(!isFlipped)}
+            />
           </div>
         </div>
       </div>
       <div className="dog-container">
         <h1>Your Dog</h1>
         <DogCard />
-        <DogLevel />
+        <DogLevel taskCount={taskCount} />
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import TaskPopUp from "../TaskPopUp";
 import TaskGallery from "../TaskGallery";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function ProfileCard({ user, onFlip }) {
   const [buttonPopup, setButtonPopup] = useState(false);
+  const [taskCount, setTaskCount] = useState(0);
   return (
     <div
       style={{
