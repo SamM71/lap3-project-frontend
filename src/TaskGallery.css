@@ -1,58 +1,50 @@
-* {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
 .TaskGallery {
   padding: 20px;
-  background-color: #f9f9f9; 
-  border-radius: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
   overflow-y: auto;
   height: 100%;
-  font-family: "Comic Sans MS", "Chalkboard SE", sans-serif; 
 }
 
 .TaskGallery h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #2b2b2b; /
 }
 
-.taskContainer {
+.TaskGallery .taskContainer {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 15px;
-  background-color: red;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* backdrop-filter: blur(9px); */
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-.taskContainer h3,
-.taskContainer p {
-  margin: 10px 0;
-  color: #2b2b2b;
-}
-
-.taskRow {
-  display: flex;
+.TaskGallery .taskContainer p {
   margin: 10px 0;
 }
 
-.taskLabel {
-  font-weight: bold;
-  color: #365196;
-  min-width: 150px;
+.TaskGallery .taskContainer p:first-child {
+  margin-top: 0;
 }
-.noTasks {
+
+.TaskGallery .taskContainer p .taskLabel {
+  font-weight: bold; /* Makes the label bold */
+}
+
+.TaskGallery .taskContainer p:last-child {
+  margin-bottom: 0;
+}
+
+.TaskGallery .noTasks {
   text-align: center;
   color: #aaa;
 }
 
-.back-to-profile {
-  background-color: #31384a;
-  color: #fff;
+.TaskGallery .back-to-profile {
+  background-color: #d9d9d9;
+  color: #31384a;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 25px;
@@ -64,35 +56,5 @@
 }
 
 .back-to-profile:hover {
-  background-color: #96ace3;
+  background-color: #fff;
 }
-
-.taskCircle {
-  border-radius: 50%;
-  background-color: #dfc3f5;
-  color: #fff;
-  padding: 5px 1px;
-}
-
-.taskInput {
-  font-weight: bold;
-}
-
-.see-completed-tasks {
-    font-size: 20px;
-    background-color: #96ace3;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 60%;
-  align-self: center; 
-}
-
-.see-completed-tasks:hover {
-    background-color: #31384a;
-}
-

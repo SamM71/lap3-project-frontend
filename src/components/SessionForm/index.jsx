@@ -7,29 +7,24 @@ const SessionForm = (props) => {
   const [mood, setMood] = useState("");
   const [message, setMessage] = useState("");
   const [isActive, setIsActive] = useState("");
-  const [moodEmoji, setMoodEmoji] = useState("");
 
   function veryGoodMood(e) {
     setMood("Very Good");
-    setMoodEmoji("😀");
     setIsActive(e.target.id);
   }
 
   function goodMood(e) {
     setMood("Good");
-    setMoodEmoji("😊");
     setIsActive(e.target.id);
   }
 
   function badMood(e) {
     setMood("Bad");
-    setMoodEmoji("😌");
     setIsActive(e.target.id);
   }
 
   function veryBadMood(e) {
     setMood("Very Bad");
-    setMoodEmoji("😒");
     setIsActive(e.target.id);
   }
 
@@ -47,11 +42,7 @@ const SessionForm = (props) => {
 
       fetch("https://mongo-juice-api.onrender.com/tasks", {
         method: "POST",
-        body: JSON.stringify({
-          name: title,
-          description: desc,
-          mood: moodEmoji,
-        }),
+        body: JSON.stringify({ name: title, description: desc, mood: mood }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
           Authorization: `Bearer ${token}`,
