@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../../src/TaskGallery.css";
+import DogLevel from "../DogLevel";
 
-function TaskGallery({ onFlip }) {
+function TaskGallery({ onFlip, setTaskCount }) {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -12,16 +13,17 @@ function TaskGallery({ onFlip }) {
       try {
         const response = await axios.get("http://localhost:8080/tasks", {
           headers: {
-            Authorization: `Bearer ${token}`, // Add the token to your request headers
+            Authorization: `Bearer ${token}`,
           },
         });
         setTasks(response.data.task);
+        setTaskCount(response.data.task.length);
       } catch (error) {
         console.error("There was an error fetching the tasks!", error);
       }
     }
     fetchTasks();
-  }, []);
+  }, [setTaskCount]);
 
   return (
     <div>
