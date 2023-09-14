@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Timer } from '../../components'
 import TimerContext from '../../contexts'
-import { SessionForm } from '../../components'
+import { SessionForm, Redirect } from '../../components'
 import Modal from 'react-modal'
 import { updateNav } from '../../scripts'
 
@@ -36,6 +36,7 @@ const Pomodoro = () => {
 
   return (
     <>
+      <Redirect />
       <TimerContext.Provider value ={{
         workMinutes,
         setWorkMinutes,

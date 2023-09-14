@@ -12,3 +12,4 @@ export { default as TaskPopUp } from "./TaskPopUp";
 export { default as SessionForm } from "./SessionForm"
 export { default as TaskGallery } from "./TaskGallery";
 export { default as EndTimerButton } from "./EndTimerButton"
+export { default as Redirect } from "./Redirect"
