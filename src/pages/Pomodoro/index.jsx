@@ -37,7 +37,7 @@ const Pomodoro = () => {
 
   return (
     <>
-      <Redirect />
+      <Redirect mustBeLoggedIn={true}/>
       <TimerContext.Provider value ={{
         workMinutes,
         setWorkMinutes,
