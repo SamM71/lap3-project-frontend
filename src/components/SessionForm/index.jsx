@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./index.css";
 
 const SessionForm = (props) => {
@@ -54,7 +54,7 @@ const SessionForm = (props) => {
           setTimeout(() => {
             setMessage("");
             props.closeModal();
-          }, 2000);
+          }, 1500);
           console.log(data);
         })
         .catch((err) => {
@@ -63,7 +63,7 @@ const SessionForm = (props) => {
           setTimeout(() => {
             setMessage("");
             props.closeModal();
-          }, 2000);
+          }, 1500);
         });
       setTitle("");
       setDesc("");
