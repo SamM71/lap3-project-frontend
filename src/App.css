@@ -4,8 +4,10 @@
 }
 
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
+  font-family: rubik;
   margin: 0 auto;
+  padding: 0px;
   text-align: center;
   background-color: #31384a;
 }
@@ -15,8 +17,11 @@ html {
 }
 
 body {
-  /* background-color: #31384a; */
-  background-color: #31384a;
+
+  margin: 0px;
+  padding: 0px;
+  background-color: #31384A;
+
 }
 
 footer {
@@ -64,16 +69,19 @@ footer {
   display: flex;
   justify-content: space-between;
   /* border: solid black 1px; */
-  height: 80vh;
+  height: 84vh;
   box-sizing: border-box;
 }
 
 .profile-container > * {
-  width: 50%;
+  width: 40%;
   box-sizing: border-box;
  
   border-radius: 20px;
- background: white;
+
+  background-color: #fff;
+  margin-right: 7%;
+
 }
 
 .dog-container {
@@ -118,7 +126,7 @@ footer {
   color: white;
 }
 
-nav {
+/* nav {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -131,7 +139,7 @@ nav {
   justify-content: start;
   align-items: center;
   list-style: none;
-}
+} */
 
 .timer-container {
   display: grid;
@@ -250,8 +258,9 @@ a {
 
 .flip-container {
   perspective: 1000px;
-  width: 500px;
+  width: 40%;
   height: 100%;
+  margin-left: 7%;
 }
 
 .flipper {
@@ -293,7 +302,7 @@ form {
   display: flex;
   flex-direction: column;
   color: #fff;
-  width: 50%;
+  width: 30%;
 }
 
 label {
@@ -326,6 +335,7 @@ input[type="submit"] {
   width: 20%;
   align-self: center;
 }
+
 input[type="submit"]:hover {
   background-color: #fff;
 }
