@@ -19,6 +19,7 @@ const Pomodoro = () => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+      backgroundColor: '#31384a',
     },
 
   };
