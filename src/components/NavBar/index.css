@@ -1,15 +1,23 @@
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-top: 0px;
   margin-bottom: 10vh;
-  background: #f4f3ed;
+  background-color: #D9D9D925;
+  color: #f9f9f9;
   padding: 10px;
+}
+#navBar {
+  color: white;
+}
+#imageBox {
+  display: inline-block;
+  font-family: Rubik;
 }
 
 .logout {
-  margin-right: -88vh;
+  /* margin-right: -88vh; */
   margin-left: 76vh;
   
 }

@@ -11,6 +11,10 @@
   text-align: center;
   background-color: #31384a;
 }
+#footer-col {
+  color: white;
+  font-style: italic;
+}
 
 html {
   height: 100vh;
