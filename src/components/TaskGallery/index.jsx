@@ -24,7 +24,7 @@ function TaskGallery({ onFlip }) {
         {tasks.length > 0 ? (
           tasks.map((task) => (
             <div key={task._id} className="taskContainer">
-              <p>Task: {task.task}</p>
+              <p>Task: {task.name}</p>
               <p>Description: {task.description}</p>
               <p>Mood: {task.mood}</p>
               <p>Completed on: {task.completed_at}</p>
