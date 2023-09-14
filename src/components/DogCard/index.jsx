@@ -6,7 +6,7 @@ const DogCard = () => {
     <>
       <LottiePlayer
         src="https://lottie.host/a45a8085-dab9-4bf7-8aee-35a38ebf4e42/aDFz0w3EDb.json"
-        background="#FFFFFF"
+        // background="#FFFFFF"
         speed="0.8"
         style={{ width: "auto", height: "400px" }}
         loop
