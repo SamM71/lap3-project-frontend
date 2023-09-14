@@ -10,7 +10,7 @@ const LoginForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:8080/users/login", {
+      const response = await fetch("https://mongo-juice-api.onrender.com/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +27,7 @@ const LoginForm = () => {
 
       if (responseData.token) {
         localStorage.setItem("token", responseData.token);
-        // Navigate the user to a different page, for example, a dashboard
+
         navigate("/pomodoro");
       }
     } catch (error) {
@@ -36,19 +36,17 @@ const LoginForm = () => {
   };
 
   return (
-
     <div className="formContainer">
-      
-        <LottiePlayer
-          src="https://lottie.host/b34b9607-317a-4492-a003-bb64f3747aa0/DF0JnCnUXJ.json" // background="#FFFFFF"
-          speed="0.8"
-          style={{ width: "auto", height: "150px" }}
-          loop
-          autoplay
-          direction="1"
-          mode="normal"
-        />
-     
+      <LottiePlayer
+        src="https://lottie.host/b34b9607-317a-4492-a003-bb64f3747aa0/DF0JnCnUXJ.json" // background="#FFFFFF"
+        speed="0.8"
+        style={{ width: "auto", height: "150px" }}
+        loop
+        autoplay
+        direction="1"
+        mode="normal"
+      />
+
       <form onSubmit={handleSubmit(onSubmit)}>
         <label for="email-input">Email</label>
         <br />
@@ -60,23 +58,13 @@ const LoginForm = () => {
         />
         <label for="password-input">New Password</label>
         <br />
-        <input
-          {...register("password")}
-          id="password-input"
-          type="password"
-          
-        />
+        <input {...register("password")} id="password-input" type="password" />
 
         <p>{data}</p>
         <input type="submit" />
       </form>
     </div>
-
-    
-
-
   );
 };
-
 
 export default LoginForm;

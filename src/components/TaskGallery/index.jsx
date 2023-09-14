@@ -11,7 +11,7 @@ function TaskGallery({ onFlip, setTaskCount }) {
       const token = localStorage.getItem("token");
 
       try {
-        const response = await axios.get("http://localhost:8080/tasks", {
+        const response = await axios.get("https://mongo-juice-api.onrender.com/tasks", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -32,11 +32,24 @@ function TaskGallery({ onFlip, setTaskCount }) {
         {tasks.length > 0 ? (
           tasks.map((task) => (
             <div key={task._id} className="taskContainer">
-              <p>Task: {task.name}</p>
-              <p>Description: {task.description}</p>
-              <p>Mood: {task.mood}</p>
-              <p>Completed on: {task.completed_at}</p>
+              <h3>
+                <span className="taskLabel">Task: </span>
+                {task.name}
+              </h3>
+              <p>
+                <span className="taskLabel">Description: </span>:{" "}
+                {task.description}
+              </p>
+              <p>
+                <span className="taskLabel">Mood: </span>
+                {task.mood}
+              </p>
+              <p>
+                <span className="taskLabel"></span>Completed on:{" "}
+                {task.completed_at}
+              </p>
               <button
+                className="back-to-profile"
                 style={{ position: "absolute", top: "10px", right: "10px" }}
                 onClick={onFlip}
               >
