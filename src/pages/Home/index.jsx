@@ -4,6 +4,7 @@ import LottiePlayer from "../../components/LottiePlayer";
 import './index.css'
 import { Link } from 'react-router-dom'
 import { updateNav } from '../../scripts';
+import { Redirect } from '../../components';
 
 const Home = () => {
 
@@ -13,6 +14,7 @@ const Home = () => {
 
   return (
     <>
+    <Redirect mustBeLoggedIn={false}/>
     <div id='home-page'>
     <div>
     <h1 id='home-title'>Pomo<br />Dogo</h1>

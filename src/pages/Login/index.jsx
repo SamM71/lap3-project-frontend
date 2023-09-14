@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import LoginForm from "../../components/LoginForm";
 import { updateNav } from '../../scripts';
+import { Redirect } from '../../components';
 
 
 const Login = () => {
@@ -10,7 +11,10 @@ const Login = () => {
   })
  
   return (
-    <LoginForm />
+    <>
+      <Redirect mustBeLoggedIn={false}/>
+      <LoginForm />
+    </>
    
    
   )

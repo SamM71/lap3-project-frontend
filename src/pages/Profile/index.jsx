@@ -15,7 +15,7 @@ function Profile() {
 
   return (
     <>
-      <Redirect />
+      <Redirect mustBeLoggedIn={true}/>
       <div className="profile-container">
         <div
           className={`flip-container ${isFlipped ? "flipped" : ""}`}

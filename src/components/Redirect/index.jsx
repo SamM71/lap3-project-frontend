@@ -7,9 +7,9 @@ const Redirect = (props) => {
   useEffect(() => {
     const authenticated = localStorage.getItem("token")
   
-    if (!authenticated) {
+    if (!authenticated && (props.mustBeLoggedIn || props.notFound)) {
       navigate("/", { replace: true })
-    } else if (props.toPomodoro) {
+    } else if (authenticated && (!props.mustBeLoggedIn || props.notFound)) {
       navigate("/pomodoro", { replace: true })
     }
   })

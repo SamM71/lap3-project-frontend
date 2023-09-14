@@ -3,7 +3,7 @@ import { Redirect } from "../../components";
 
 const NotFound = () => {
   return (
-    <Redirect toPomodoro={true}/>
+    <Redirect notFound={true}/>
   )
 }
 

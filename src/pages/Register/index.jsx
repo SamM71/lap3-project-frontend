@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import RegisterForm from "../../components/RegisterForm";
 import { updateNav } from '../../scripts';
+import { Redirect } from '../../components';
 
 
 const Register = () => {
@@ -9,7 +10,10 @@ const Register = () => {
   })
  
   return (
-    <RegisterForm />
+    <>
+      <Redirect mustBeLoggedIn={false}/>
+      <RegisterForm />
+    </>
   )
 }
 
