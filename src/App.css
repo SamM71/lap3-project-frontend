@@ -1,3 +1,8 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -10,7 +15,8 @@ html {
 }
 
 body {
-  background-color: #31384A;
+  /* background-color: #31384a; */
+  background-color: #31384a;
 }
 
 footer {
@@ -65,11 +71,9 @@ footer {
 .profile-container > * {
   width: 50%;
   box-sizing: border-box;
-  border: solid black 1px;
+ 
   border-radius: 20px;
-  background-color: #fff;
-  margin-left: 20px;
-  margin-right: 20px;
+ background: white;
 }
 
 .dog-container {
@@ -79,12 +83,16 @@ footer {
   justify-content: center;
   padding: 20px;
 
+  background: radial-gradient(#96ACE3 8px, #365196 30%, #31384a 70%);
+
+  color: white;
   height: 100%; /* to take full height of the parent container */
 }
 
 .dog-level-container {
   width: 300px;
   margin-top: 20px;
+  /* color: white; */
 }
 
 .progress-bar {
@@ -93,6 +101,7 @@ footer {
   border-radius: 10px;
   background-color: lightgray;
   margin-bottom: 10px;
+  /* color: white; */
 }
 
 .progress-bar-fill {
@@ -106,7 +115,7 @@ footer {
   margin-top: 10px;
   font-size: 24px;
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 nav {
@@ -144,7 +153,7 @@ nav {
 
 .timer-btns {
   background-color: transparent;
-  border:0;
+  border: 0;
   display: inline-block;
   width: 50px;
   cursor: pointer;
@@ -189,9 +198,9 @@ a {
   padding: 32px;
   width: 100%;
   max-width: 640px;
-  background-color: white; /* Changed from grey to white */
-  border-radius: 5px; /* Added to maintain consistency with TaskGallery styles */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added to maintain consistency with TaskGallery styles */
+  background-color: white; 
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /
 }
 
 .popup-inner .close-btn {
@@ -238,7 +247,6 @@ a {
   text-align: center;
   color: #aaa;
 }
-
 
 .flip-container {
   perspective: 1000px;
@@ -299,17 +307,15 @@ input {
   border: none;
   border-radius: 25px;
   font-size: 1rem;
-  background-color: #D9D9D925;
-  color:#fff;
+  background-color: #d9d9d925;
+  color: #fff;
 }
 input::placeholder {
-  
   padding-left: 0.3rem;
-  
 }
 
 input[type="submit"] {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   color: #31384a;
   padding: 0.5rem 1rem;
   border: none;

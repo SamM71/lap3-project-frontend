@@ -13,11 +13,13 @@ function ProfileCard({ user, onFlip }) {
         flexDirection: "column",
         padding: "20px",
         maxWidth: "500px",
+
         margin: "0 auto",
         textAlign: "center",
         height: "100%",
-        boxSizing: "border-box",
         overflowY: "auto",
+
+        borderRadius: "20px",
       }}
     >
       <img
@@ -29,7 +31,11 @@ function ProfileCard({ user, onFlip }) {
         {user.firstName} {user.lastName}
       </h1>
       <p>Email: {user.email}</p>
-      <button style={{ marginTop: "auto" }} onClick={onFlip}>
+      <button
+        className="see-completed-tasks"
+        style={{ marginTop: "auto" }}
+        onClick={onFlip}
+      >
         See Completed Tasks
       </button>
       <TaskPopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
