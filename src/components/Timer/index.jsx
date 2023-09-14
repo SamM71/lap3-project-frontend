@@ -6,6 +6,8 @@ import TimerContext from '../../contexts';
 import bark from "../../assets/dog-barking.mp3"
 
 const Timer = (props) => {
+  const red = "#D44E50"
+  const green = "#5DC685"
   const timerInfo = useContext(TimerContext)
   
   const [isPaused, setIsPaused] = useState(true)
@@ -99,7 +101,7 @@ const Timer = (props) => {
           text={minutes + ":" + seconds} 
           styles={buildStyles({
             textColor: 'white',
-            pathColor: mode === 'work' ? 'red' : 'green',
+            pathColor: mode === 'work' ? red : green,
             tailColor: 'grey'
           })}/>
         <div>
