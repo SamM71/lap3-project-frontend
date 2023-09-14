@@ -2,7 +2,9 @@ import React from 'react'
 
 const StartButton = (props) => {
   return (
-    <button {...props} className='timer-btns'>Start</button>
+    <button {...props} className='timer-btns'>
+      <img src="../../../public/play.png" alt="Start" />
+    </button>
   )
 }
 

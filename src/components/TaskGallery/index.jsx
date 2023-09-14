@@ -7,8 +7,14 @@ function TaskGallery({ onFlip }) {
 
   useEffect(() => {
     async function fetchTasks() {
+      const token = localStorage.getItem("token");
+
       try {
-        const response = await axios.get("http://localhost:8080/tasks");
+        const response = await axios.get("http://localhost:8080/tasks", {
+          headers: {
+            Authorization: `Bearer ${token}`, // Add the token to your request headers
+          },
+        });
         setTasks(response.data.task);
       } catch (error) {
         console.error("There was an error fetching the tasks!", error);
@@ -24,7 +30,7 @@ function TaskGallery({ onFlip }) {
         {tasks.length > 0 ? (
           tasks.map((task) => (
             <div key={task._id} className="taskContainer">
-              <p>Task: {task.task}</p>
+              <p>Task: {task.name}</p>
               <p>Description: {task.description}</p>
               <p>Mood: {task.mood}</p>
               <p>Completed on: {task.completed_at}</p>

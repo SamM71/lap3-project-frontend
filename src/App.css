@@ -1,13 +1,21 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   background-color: #31384a;
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   background-color: #31384A;
+}
+
+footer {
+  position: relative;
+  bottom: -5em;
 }
 
 .logo {
@@ -135,7 +143,10 @@ nav {
 } */
 
 .timer-btns {
-  margin: 20px;
+  background-color: transparent;
+  border:0;
+  display: inline-block;
+  width: 50px;
   cursor: pointer;
 }
 
@@ -194,8 +205,6 @@ a {
   padding: 20px;
   border-radius: 5px;
   background-color: #f9f9f9;
-  overflow-y: auto;
-  height: 100%;
 }
 
 .TaskGallery h2 {
@@ -264,27 +273,7 @@ a {
 .back {
   transform: rotateY(180deg);
 }
-/* delete from here */
-/* .grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  padding: 20px;
 
-}
-
-.left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.lottie-player {
-  width: 80%; 
-  height: auto; 
-} */
-/* to here */
 .formContainer {
   display: grid;
   place-items: center;
@@ -335,4 +324,11 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
   background-color: #fff;
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-gap: 20px; */
+
 }
