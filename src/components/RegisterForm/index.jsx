@@ -14,7 +14,6 @@ const RegisterForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      console.log(JSON.stringify(data));
       const response = await fetch("http://localhost:8080/users/register", {
         method: "POST",
         headers: {
@@ -37,7 +36,6 @@ const RegisterForm = () => {
   };
 
   return (
-    
     <div className="formContainer">
       <div className="left">
         <LottiePlayer
@@ -95,7 +93,6 @@ const RegisterForm = () => {
         <p>{data}</p>
         <input type="submit" />
       </form>
-
     </div>
   );
 };
