@@ -26,7 +26,7 @@
   border-radius: 15px;
   background-color: red;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* backdrop-filter: blur(9px); */
+  
 }
 
 .taskContainer h3,
@@ -67,12 +67,12 @@
   background-color: #96ace3;
 }
 
-.taskCircle {
+/* .taskCircle {
   border-radius: 50%;
   background-color: #dfc3f5;
   color: #fff;
   padding: 5px 1px;
-}
+} */
 
 .taskInput {
   font-weight: bold;
