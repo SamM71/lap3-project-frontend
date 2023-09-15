@@ -14,8 +14,9 @@ const RegisterForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      console.log(JSON.stringify(data));
+
       const response = await fetch("https://mongo-juice-api.onrender.com/users/register", {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +38,6 @@ const RegisterForm = () => {
   };
 
   return (
-    
     <div className="formContainer">
       <div className="left">
         <LottiePlayer
@@ -95,7 +95,6 @@ const RegisterForm = () => {
         <p>{data}</p>
         <input type="submit" />
       </form>
-
     </div>
   );
 };
