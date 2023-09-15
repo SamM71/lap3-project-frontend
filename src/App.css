@@ -149,7 +149,8 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 48px;
-  color: purple;
+  color: white;
+  font-family: 'Permanent Marker';
 }
 
 /* .animation {
@@ -162,6 +163,9 @@ footer {
   display: inline-block;
   width: 50px;
   cursor: pointer;
+  padding-top: 3%;
+  padding-right: 15%;
+  padding-left: 5%;
 }
 
 .cprogress-bar {

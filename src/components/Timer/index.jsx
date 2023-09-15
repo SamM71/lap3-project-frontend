@@ -7,7 +7,7 @@ import bark from "../../assets/dog-barking.mp3"
 
 const Timer = (props) => {
   const red = "#D44E50"
-  const green = "#5DC685"
+  const green = "#72C77A"
   const timerInfo = useContext(TimerContext)
   
   const [isPaused, setIsPaused] = useState(true)

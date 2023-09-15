@@ -4,9 +4,12 @@ nav {
   align-items: center;
   margin-top: 0px;
   margin-bottom: 10vh;
-  background-color: #D9D9D925;
+  background-color: #D9D9D915;
   color: #f9f9f9;
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 0px;
 }
 #navBar {
   color: white;
