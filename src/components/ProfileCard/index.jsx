@@ -41,7 +41,9 @@ function ProfileCard({ user, onFlip, taskCount }) {
       <h1>
         {user.firstName} {user.lastName}
       </h1>
+      <p>Username: {user.username}</p>
       <p>Email: {user.email}</p>
+
       <p>Tasks completed: {localTaskCount}</p>
       <div style={{ flex: 1 }}></div>
 
