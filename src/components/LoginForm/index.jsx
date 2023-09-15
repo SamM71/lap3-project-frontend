@@ -46,7 +46,7 @@ const LoginForm = () => {
         direction="1"
         mode="normal"
       />
-
+      <h4 style={{color:"white"}}>Sign in Here</h4>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label for="email-input">Email</label>
         <br />
@@ -56,9 +56,9 @@ const LoginForm = () => {
           type="email"
           placeholder="email"
         />
-        <label for="password-input">New Password</label>
+        <label for="password-input">Your Password</label>
         <br />
-        <input {...register("password")} id="password-input" type="password" />
+        <input {...register("password")} id="password-input" type="password" placeholder="••••••••"/>
 
         <p>{data}</p>
         <input type="submit" />

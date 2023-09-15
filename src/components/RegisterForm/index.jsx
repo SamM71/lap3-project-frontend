@@ -37,7 +37,6 @@ const RegisterForm = () => {
   };
 
   return (
-    
     <div className="formContainer">
       <div className="left">
         <LottiePlayer
@@ -49,6 +48,7 @@ const RegisterForm = () => {
           direction="1"
           mode="normal"
         />
+        <h4 style={{color:"white"}}>Sign up Here</h4>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/*<Header />*/}
@@ -58,7 +58,7 @@ const RegisterForm = () => {
           {...register("name")}
           id="name-input"
           type="text"
-          placeholder="Name"
+          placeholder="name"
         />
         <label for="username-input">Username</label>
         <br />
