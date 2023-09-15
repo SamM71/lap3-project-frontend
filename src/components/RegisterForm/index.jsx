@@ -14,22 +14,22 @@ const RegisterForm = () => {
 
   const onSubmit = async (data) => {
     try {
-
-      const response = await fetch("https://mongo-juice-api.onrender.com/users/register", {
-
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://mongo-juice-api.onrender.com/users/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
       }
 
       const responseData = await response.json();
-      console.log("Response Data:", responseData);
 
       navigate("/login");
     } catch (error) {

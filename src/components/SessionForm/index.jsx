@@ -64,10 +64,8 @@ const SessionForm = (props) => {
             setMessage("");
             props.closeModal();
           }, 1500);
-          console.log(data);
         })
         .catch((err) => {
-          console.log(err.message);
           setMessage("There was a problem in logging your session");
           setTimeout(() => {
             setMessage("");
