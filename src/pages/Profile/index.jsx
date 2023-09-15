@@ -15,7 +15,7 @@ function Profile() {
 
   return (
     <>
-      <Redirect mustBeLoggedIn={true}/>
+      <Redirect mustBeLoggedIn={true} />
       <div className="profile-container">
         <div
           className={`flip-container ${isFlipped ? "flipped" : ""}`}
@@ -23,7 +23,11 @@ function Profile() {
         >
           <div className="flipper">
             <div className="front">
-              <ProfileCard user={user} onFlip={() => setIsFlipped(!isFlipped)} />
+              <ProfileCard
+                user={user}
+                onFlip={() => setIsFlipped(!isFlipped)}
+                taskCount={taskCount}
+              />
             </div>
             <div className="back">
               <TaskGallery

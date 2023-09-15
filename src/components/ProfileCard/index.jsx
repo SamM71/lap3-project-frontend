@@ -3,9 +3,13 @@ import TaskPopUp from "../TaskPopUp";
 import TaskGallery from "../TaskGallery";
 import React, { useState, useEffect } from "react";
 
-function ProfileCard({ user, onFlip }) {
+function ProfileCard({ user, onFlip, taskCount }) {
   const [buttonPopup, setButtonPopup] = useState(false);
-  const [taskCount, setTaskCount] = useState(0);
+  const [localTaskCount, setLocalTaskCount] = useState(taskCount);
+
+  useEffect(() => {
+    setLocalTaskCount(taskCount);
+  }, [taskCount]);
   return (
     <div
       style={{
@@ -38,6 +42,7 @@ function ProfileCard({ user, onFlip }) {
         {user.firstName} {user.lastName}
       </h1>
       <p>Email: {user.email}</p>
+      <p>Tasks completed: {localTaskCount}</p>
       <div style={{ flex: 1 }}></div>
 
       <button className="see-completed-tasks" onClick={onFlip}>
