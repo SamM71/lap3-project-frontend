@@ -10,7 +10,7 @@ const NavBar = () => {
       <header>
         <nav id='navBar'>
           <div id="imageBox">
-            <img src="../../../public/pawlogo.png" width="20px"/>
+            <img src="../../../images/pawlogo.png" width="20px"/>
             <p>PomoDogo</p>
           </div>
           <NavLink to="/profile" style={styles} className={"nav-links"}>Profile</NavLink>
