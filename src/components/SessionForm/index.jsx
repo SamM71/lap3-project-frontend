@@ -45,7 +45,7 @@ const SessionForm = (props) => {
     if (title.length > 0 && desc.length > 0 && mood.length > 0) {
       const token = localStorage.getItem("token");
 
-      fetch("https://mongo-juice-api.onrender.com/tasks", {
+      fetch("http://localhost:8080/tasks", {
         method: "POST",
         body: JSON.stringify({
           name: title,

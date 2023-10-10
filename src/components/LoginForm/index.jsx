@@ -10,7 +10,7 @@ const LoginForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("https://mongo-juice-api.onrender.com/users/login", {
+      const response = await fetch("http://localhost:8080/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

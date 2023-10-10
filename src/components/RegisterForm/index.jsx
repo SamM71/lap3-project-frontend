@@ -15,7 +15,7 @@ const RegisterForm = () => {
   const onSubmit = async (data) => {
     try {
 
-      const response = await fetch("https://mongo-juice-api.onrender.com/users/register", {
+      const response = await fetch("http://localhost:8080/users/register", {
 
         method: "POST",
         headers: {
