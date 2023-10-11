@@ -34,7 +34,7 @@ const Home = () => {
               mode="normal"
               id='home-dog'
           />
-          <div className="bubble">Welcome to PomoDogo the place to be productive and get your work done.</div>
+          <div className="bubble">Welcome to PomoDogo. <div></div>The place to be productive and get your work done.</div>
           {/* <p className="welcomeText">Welcome to PomoDogo the place to be productive and get your work done!</p> */}
     </div>
     <Link className="home-btn" to="/register">Sign Up Here</Link>
