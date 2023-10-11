@@ -11,7 +11,7 @@ function TaskGallery({ onFlip, setTaskCount }) {
       const token = localStorage.getItem("token");
 
       try {
-        const response = await axios.get("http://localhost:8080/tasks", {
+        const response = await axios.get("https://pd-backend-f080.onrender.com/tasks", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
